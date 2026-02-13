@@ -86,82 +86,6 @@ function gameBurger(){
 function letterPage(){
     nextPage(`
     <h1>💌</h1>
-    <button onclick="balloonGame()">Buka Surat</button>
-    `);
-}
-
-/* BALLOON GAME */
-function balloonGame(){
-    balloonCount = 0;
-    nextPage(`<h2>Pecahkan balon love sebanyak mungkin 💕</h2>
-    <p id="score">0 / 10</p>`);
-
-    for(let i=0;i<20;i++){
-        let balloon=document.createElement("div");
-        balloon.className="balloon";
-        balloon.innerText="💗";
-        balloon.style.left=Math.random()*90+"%";
-        balloon.style.animationDuration=(5+Math.random()*5)+"s";
-
-        balloon.onclick=()=>{
-            balloon.remove();
-            balloonCount++;
-            playSound("popSound");
-            document.getElementById("score").innerText=balloonCount+" / 10";
-
-            if(balloonCount>=10){
-                confettiPink();
-                setTimeout(()=>{
-                    nextPage(`<h2>Cantikkuu hebat banget 😍</h2>
-                    <button onclick="tulipGame()">Game Selanjutnya 🌷</button>`);
-                },1500);
-            }
-        };
-
-        app.appendChild(balloon);
-    }
-
-    setTimeout(()=>{
-        if(balloonCount<10){
-            nextPage(`<h2>Yuk main lagi sayang 💕</h2>
-            <button onclick="balloonGame()">Ulang</button>`);
-        }
-    },10000);
-}
-
-/* TULIP GAME */
-function tulipGame(){
-    tulipCount=0;
-    nextPage(`<h2>Klik 10 bunga tulip untuk capybara 🌷</h2>
-    <p id="tulipScore">0 / 10</p>`);
-
-    for(let i=0;i<20;i++){
-        let tulip=document.createElement("div");
-        tulip.className="tulip";
-        tulip.innerText="🌷";
-        tulip.style.top=Math.random()*90+"%";
-        tulip.style.left=Math.random()*90+"%";
-
-        tulip.onclick=()=>{
-            tulip.remove();
-            tulipCount++;
-            playSound("clickSound");
-            document.getElementById("tulipScore").innerText=tulipCount+" / 10";
-
-            if(tulipCount>=10){
-                confettiPink();
-                setTimeout(()=>{
-                    nextPage(`
-                    <h2>Terimakasih sayangku hebat banget 🌷💕</h2>
-                    <button onclick="finalLove()">Lanjut 💌</button>
-                    `);
-                },1500);
-            }
-        };
-
-        app.appendChild(tulip);
-    }
-}
 
 /* FINAL LETTER */
 function finalLove(){
@@ -193,3 +117,4 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+
