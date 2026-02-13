@@ -83,18 +83,24 @@ function gameBurger(){
 
     const burger = document.getElementById("burger");
     burger.onclick = () => {
-        burgerCount++;
-        playSound("clickSound");
-        document.getElementById("count").innerText = burgerCount+" / 10";
-        if(burgerCount>=10){
-            confettiPink();
-            setTimeout(()=>{
-                nextPage(`<h2>Selamat Hari Valentine Cantikkuu 💗</h2>
-                <button onclick="letterPage()">Buka Surat 💌</button>`);
-            },1500);
-        }
-    };
-}
+    burgerCount++;
+    playSound("clickSound");
+
+    document.querySelector(".capybara").innerText="🦫😋";
+    setTimeout(()=>{
+        document.querySelector(".capybara").innerText="🦫💕";
+    },300);
+
+    document.getElementById("count").innerText = burgerCount+" / 10";
+
+    if(burgerCount>=10){
+        confettiPink();
+        setTimeout(()=>{
+            nextPage(`<h2>Selamat Hari Valentine Cantikkuu 💗</h2>
+            <button onclick="letterPage()">Buka Surat 💌</button>`);
+        },1500);
+    }
+};
 
 /* LETTER PAGE */
 function letterPage(){
@@ -117,6 +123,7 @@ function balloonGame(){
         balloon.style.top=Math.random()*90+"%";
         balloon.style.left=Math.random()*90+"%";
         balloon.onclick=()=>{
+        balloon.style.transform="scale(1.5)";
             balloon.remove();
             balloonCount++;
             playSound("popSound");
@@ -150,6 +157,7 @@ function tulipGame(){
         tulip.style.top=Math.random()*90+"%";
         tulip.style.left=Math.random()*90+"%";
         tulip.onclick=()=>{
+        tulip.style.transform="scale(1.5)";
             tulip.remove();
             tulipCount++;
             playSound("clickSound");
@@ -167,14 +175,17 @@ function tulipGame(){
 
 /* FINAL LETTER */
 function finalLove(){
+    function finalLove(){
     nextPage(`
     <h2>Surat Cinta Untuk Vivi 💗</h2>
-    <p>
-    Aku sayang kamu dan sangat beruntung punya kamu 💕<br><br>
-    Segala doa terbaik buat aku dan kamu.<br>
-    Aku harap kita bisa selalu bercanda bersama.<br>
-    Aku akan selalu mendukungmu dan menjadi support number 1 kamu.<br>
-    Terimakasih sudah ada sampai saat ini sayangkuuu 💖
+    <p style="font-size:18px; line-height:1.6">
+    Aku sayang kamu lebih dari apapun di dunia ini 💕<br><br>
+    Aku sangat beruntung punya kamu.<br>
+    Segala doa terbaik selalu untuk aku dan kamu.<br>
+    Aku harap kita bisa terus bercanda, tertawa, dan bahagia bersama.<br><br>
+    Aku akan selalu mendukungmu,<br>
+    menjadi support system nomor 1 kamu selamanya 💖<br><br>
+    Terimakasih sudah ada sampai saat ini sayangkuuu 🍓🌸
     </p>
     <button onclick="robloxPage()">Halaman Terakhir 🎮</button>
     `);
@@ -195,3 +206,4 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+
