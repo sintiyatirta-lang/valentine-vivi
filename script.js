@@ -2,6 +2,20 @@ const app = document.getElementById("app");
 let burgerCount = 0;
 let balloonCount = 0;
 let tulipCount = 0;
+/* SAKURA GLOBAL ULTRA LUCU */
+function startSakura(){
+    setInterval(()=>{
+        let sakura=document.createElement("div");
+        sakura.className="sakura";
+        sakura.style.left=Math.random()*100+"vw";
+        sakura.style.animationDuration=(4+Math.random()*4)+"s";
+        document.body.appendChild(sakura);
+
+        setTimeout(()=>{ sakura.remove(); },8000);
+    },500);
+}
+
+startSakura();
 
 function playSound(id){
     document.getElementById(id).play();
@@ -180,62 +194,4 @@ function robloxPage(){
         sakura.style.animationDuration=(3+Math.random()*5)+"s";
         document.body.appendChild(sakura);
     }
-}
-@keyframes flyUp {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-10vh); }
-}
-
-.balloon {
-    animation: flyUp 8s linear infinite;
-}
-/* CAPYBARA GOYANG GEMAS */
-@keyframes wiggle {
-    0% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    100% { transform: rotate(-5deg); }
-}
-
-.capybara {
-    animation: wiggle 2s infinite ease-in-out;
-}
-
-/* BALON LEBIH GEMOY */
-.balloon {
-    position: absolute;
-    font-size: 45px;
-    cursor: pointer;
-    animation: flyUp 8s linear infinite, wiggle 2s infinite ease-in-out;
-}
-
-/* TULIP MUNCUL POP */
-@keyframes popIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
-}
-
-.tulip {
-    animation: popIn 0.5s ease-out;
-}
-
-/* BUTTON PULSE LOVE */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-button {
-    animation: pulse 2s infinite;
-}
-
-/* BACKGROUND SAKURA GLOBAL */
-.sakura {
-    position: fixed;
-    width: 12px;
-    height: 12px;
-    background: radial-gradient(circle, #ffc0cb, #ff69b4);
-    border-radius: 50%;
-    animation: fall 6s linear infinite;
-    opacity: 0.8;
 }
