@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(#ffd6ec, #ffc0e6);
+    overflow: hidden;
+    text-align: center;
+    color: #d63384;
+}
+
+.page {
+    display: none;
+    height: 100vh;
+    padding: 30px;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    background: #ff69b4;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    position: absolute;
+}
+
+.capybara {
+    font-size: 80px;
+}
+
+.burger {
+    font-size: 40px;
+    cursor: grab;
+}
+
+.balloon {
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.tulip {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.sakura {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    from {transform: translateY(-10px);}
+    to {transform: translateY(100vh);}
+}
