@@ -65,4 +65,63 @@ button:hover {
     from {transform: translateY(-10px);}
     to {transform: translateY(100vh);}
 }
+@keyframes flyUp {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+
+.balloon {
+    animation: flyUp 8s linear infinite;
+}
+/* CAPYBARA GOYANG GEMAS */
+@keyframes wiggle {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.capybara {
+    animation: wiggle 2s infinite ease-in-out;
+}
+
+/* BALON LEBIH GEMOY */
+.balloon {
+    position: absolute;
+    font-size: 45px;
+    cursor: pointer;
+    animation: flyUp 8s linear infinite, wiggle 2s infinite ease-in-out;
+}
+
+/* TULIP MUNCUL POP */
+@keyframes popIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.tulip {
+    animation: popIn 0.5s ease-out;
+}
+
+/* BUTTON PULSE LOVE */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button {
+    animation: pulse 2s infinite;
+}
+
+/* BACKGROUND SAKURA GLOBAL */
+.sakura {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #ffc0cb, #ff69b4);
+    border-radius: 50%;
+    animation: fall 6s linear infinite;
+    opacity: 0.8;
+}
+
 
