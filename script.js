@@ -1,6 +1,7 @@
 const app = document.getElementById("app");
 let burgerCount = 0;
 let balloonCount = 0;
+let tulipCount = 0;
 
 function playSound(id){
     document.getElementById(id).play();
@@ -114,7 +115,7 @@ function balloonGame(){
         if(balloonCount>=10){
             confettiPink();
             nextPage(`<h2>Cantikkuu hebat banget 😍</h2>
-            <button onclick="suratterakhir()">Selanjutnya FINAL LETTER</button>`);
+            <button onclick="tulipGame()">Game Selanjutnya 🌷</button>`);
         }else{
             nextPage(`<h2>Yuk main lagi sayang 💕</h2>
             <button onclick="balloonGame()">Ulang</button>`);
@@ -122,6 +123,33 @@ function balloonGame(){
     },10000);
 }
 
+/* TULIP GAME */
+function tulipGame(){
+    tulipCount=0;
+    nextPage(`<h2>Petik 10 bunga tulip untuk capybara 🌷</h2>
+    <p id="tulipScore">0 / 10</p>`);
+
+    for(let i=0;i<15;i++){
+        let tulip=document.createElement("div");
+        tulip.className="tulip";
+        tulip.innerText="🌷";
+        tulip.style.top=Math.random()*90+"%";
+        tulip.style.left=Math.random()*90+"%";
+        tulip.onclick=()=>{
+            tulip.remove();
+            tulipCount++;
+            playSound("clickSound");
+            document.getElementById("tulipScore").innerText=tulipCount+" / 10";
+            if(tulipCount>=10){
+                confettiPink();
+                setTimeout(()=>{
+                    finalLove();
+                },1500);
+            }
+        };
+        app.appendChild(tulip);
+    }
+}
 
 /* FINAL LETTER */
 function finalLove(){
@@ -153,6 +181,61 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+@keyframes flyUp {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
 
+.balloon {
+    animation: flyUp 8s linear infinite;
+}
+/* CAPYBARA GOYANG GEMAS */
+@keyframes wiggle {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
 
+.capybara {
+    animation: wiggle 2s infinite ease-in-out;
+}
 
+/* BALON LEBIH GEMOY */
+.balloon {
+    position: absolute;
+    font-size: 45px;
+    cursor: pointer;
+    animation: flyUp 8s linear infinite, wiggle 2s infinite ease-in-out;
+}
+
+/* TULIP MUNCUL POP */
+@keyframes popIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.tulip {
+    animation: popIn 0.5s ease-out;
+}
+
+/* BUTTON PULSE LOVE */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button {
+    animation: pulse 2s infinite;
+}
+
+/* BACKGROUND SAKURA GLOBAL */
+.sakura {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #ffc0cb, #ff69b4);
+    border-radius: 50%;
+    animation: fall 6s linear infinite;
+    opacity: 0.8;
+}
