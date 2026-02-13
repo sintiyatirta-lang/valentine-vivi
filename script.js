@@ -123,33 +123,6 @@ function balloonGame(){
     },10000);
 }
 
-/* TULIP GAME */
-function tulipGame(){
-    tulipCount=0;
-    nextPage(`<h2>Petik 10 bunga tulip untuk capybara 🌷</h2>
-    <p id="tulipScore">0 / 10</p>`);
-
-    for(let i=0;i<15;i++){
-        let tulip=document.createElement("div");
-        tulip.className="tulip";
-        tulip.innerText="🌷";
-        tulip.style.top=Math.random()*90+"%";
-        tulip.style.left=Math.random()*90+"%";
-        tulip.onclick=()=>{
-            tulip.remove();
-            tulipCount++;
-            playSound("clickSound");
-            document.getElementById("tulipScore").innerText=tulipCount+" / 10";
-            if(tulipCount>=10){
-                confettiPink();
-                setTimeout(()=>{
-                    finalLove();
-                },1500);
-            }
-        };
-        app.appendChild(tulip);
-    }
-}
 
 /* FINAL LETTER */
 function finalLove(){
@@ -181,3 +154,4 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+
