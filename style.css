@@ -46,17 +46,6 @@ button:hover {
     cursor: grab;
 }
 
-.balloon {
-    position: absolute;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.tulip {
-    font-size: 40px;
-    cursor: pointer;
-}
-
 .sakura {
     position: fixed;
     width: 15px;
@@ -75,6 +64,4 @@ button:hover {
     to { transform: translateY(-10vh); }
 }
 
-.balloon {
-    animation: flyUp 8s linear infinite;
-}
+
