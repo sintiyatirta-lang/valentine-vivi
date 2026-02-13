@@ -114,7 +114,7 @@ function balloonGame(){
         if(balloonCount>=10){
             confettiPink();
             nextPage(`<h2>Cantikkuu hebat banget 😍</h2>
-            <button onclick="tulipGame()">Game Selanjutnya 🌷</button>`);
+            <button onclick="suratterakhir()">Selanjutnya FINAL LETTER</button>`);
         }else{
             nextPage(`<h2>Yuk main lagi sayang 💕</h2>
             <button onclick="balloonGame()">Ulang</button>`);
@@ -153,5 +153,6 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+
 
 
