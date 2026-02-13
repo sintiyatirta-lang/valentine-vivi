@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Calibri', cursive;
     background: linear-gradient(#ffd6ec, #ffc0e6);
     overflow: hidden;
     text-align: center;
@@ -52,11 +52,6 @@ button:hover {
     cursor: pointer;
 }
 
-.tulip {
-    font-size: 40px;
-    cursor: pointer;
-}
-
 .sakura {
     position: fixed;
     width: 15px;
@@ -70,3 +65,4 @@ button:hover {
     from {transform: translateY(-10px);}
     to {transform: translateY(100vh);}
 }
+
