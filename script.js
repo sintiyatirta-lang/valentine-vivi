@@ -1,7 +1,6 @@
 const app = document.getElementById("app");
 let burgerCount = 0;
 let balloonCount = 0;
-let tulipCount = 0;
 
 function playSound(id){
     document.getElementById(id).play();
@@ -154,4 +153,5 @@ function robloxPage(){
         document.body.appendChild(sakura);
     }
 }
+
 
